@@ -23,7 +23,29 @@ A dynamic Android application for sending money with support for multiple servic
 
 ## 📱 Screenshots
 
-The app includes:
+The app includes several key screens with a modern, clean design:
+
+### Sign In Screen
+![Sign In Screen](Screenshot_20250824_173954.png)
+- Clean authentication interface with email and password fields
+- Modern purple accent design with "SEND MONEY APP" branding
+- Password visibility toggle and form validation
+
+### Home Dashboard
+![Home Dashboard](Screenshot_20250824_175446.png)
+- Personalized greeting with user verification badge
+- Current balance display with wallet icon
+- Quick action cards for Send Money and View Saved Requests
+- Bottom navigation with Home, Transactions, and Profile tabs
+
+### Send Money Form
+![Send Money Form](Screenshot_20250824_175506.png)
+- Dynamic form with service and provider selection dropdowns
+- Real-time form validation with error messages
+- Language toggle (EN | AR) for English/Arabic support
+- Progressive form building based on selected service and provider
+
+The app features:
 - **Send Money Screen**: Dynamic form with service/provider selection
 - **Confirmation Screen**: Transaction review before final submission
 - **Transactions Screen**: List of all submitted requests with JSON details view
@@ -150,36 +172,14 @@ The app supports:
 - **Runtime Switching**: Change language without app restart
 - **Localized Content**: All text, error messages, and placeholders
 
-## 📈 Performance
-
-- **Efficient Form Building**: Dynamic form generation without performance impact
-- **Optimized Validation**: Real-time validation without blocking UI
-- **Memory Management**: Proper cleanup of form resources
-- **Smooth Navigation**: Fast screen transitions and state management
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👥 Team
 
-- **Developer**: [Your Name]
+- **Developer**: Walid Azgear
 - **Project**: SendMoney App
 - **Version**: 1.0.0
 
-## 📞 Support
 
-For support and questions:
-- Create an issue in the GitHub repository
-- Contact: [your-email@example.com]
+- Contact: [azgearwalid@gmail.com]
 
 ---
 
