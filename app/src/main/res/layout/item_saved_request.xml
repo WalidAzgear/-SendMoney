@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="request"
+            type="com.azgear.sendmoney.modules.transactions.data.SavedRequest" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:layout_marginHorizontal="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Request ID -->
+            <TextView
+                android:id="@+id/tv_request_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{@string/request_id_format(request.id)}"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/subtitle_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Request ID: REQ001" />
+
+            <!-- Service Name -->
+            <TextView
+                android:id="@+id/tv_service_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{request.serviceName}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/brand_text"
+                app:layout_constraintEnd_toStartOf="@+id/tv_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_request_id"
+                tools:text="Bank Transfer" />
+
+            <!-- Amount -->
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{request.formattedAmount}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_request_id"
+                tools:text="250.00 AED" />
+
+            <!-- Provider Name -->
+            <TextView
+                android:id="@+id/tv_provider_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{request.providerName}"
+                android:textSize="14sp"
+                android:textColor="@color/header_text"
+                app:layout_constraintEnd_toStartOf="@+id/tv_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_service_name"
+                tools:text="ABC Bank" />
+
+            <!-- Status -->
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{request.status.name()}"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="@color/subtitle_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_amount"
+                tools:text="SAVED" />
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{request.formattedDate}"
+                android:textSize="12sp"
+                android:textColor="@color/subtitle_text"
+                app:layout_constraintEnd_toStartOf="@+id/view_details_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_provider_name"
+                tools:text="Dec 21, 2024 14:30" />
+
+            <!-- View Details Button -->
+            <Button
+                android:id="@+id/view_details_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/view_details"
+                android:textColor="@color/purple_500"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout> 

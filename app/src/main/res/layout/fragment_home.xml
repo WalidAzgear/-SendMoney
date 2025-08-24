@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.azgear.sendmoney.modules.home.viewmodel.HomeViewModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_500"
+                tools:context=".modules.home.ui.HomeFragment">
+
+                <!-- Header Section with User Profile -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_section"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- Profile Image -->
+                    <ImageView
+                        android:id="@+id/iv_profile"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_profile"
+                        android:background="@drawable/circle_background"
+                        android:scaleType="centerInside"
+                        android:padding="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@android:color/white" />
+
+                    <!-- User Info -->
+                    <TextView
+                        android:id="@+id/tv_greeting"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/good_morning"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_notification"
+                        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                        app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/default_username"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_notification"
+                        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_greeting" />
+
+                    <!-- Status Badge -->
+                    <TextView
+                        android:id="@+id/tv_user_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@android:color/white"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:text="@string/verified_user"
+                        android:textColor="@color/purple_500"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+                    <!-- Notification Icon -->
+                    <ImageView
+                        android:id="@+id/iv_notification"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_home"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_profile"
+                        app:tint="@android:color/white" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Balance Card Section -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header_section">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="24dp">
+
+                        <!-- Balance Icon -->
+                        <ImageView
+                            android:id="@+id/iv_wallet"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_home"
+                            android:background="@color/purple_500"
+                            android:padding="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@android:color/white" />
+
+                        <!-- Balance Text -->
+                        <TextView
+                            android:id="@+id/tv_balance_label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/current_balance"
+                            android:textColor="@color/subtitle_text"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/iv_wallet"
+                            app:layout_constraintTop_toTopOf="@+id/iv_wallet" />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/default_balance"
+                            android:textColor="@color/brand_text"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/iv_wallet"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_balance_label" />
+
+                        <!-- Balance Actions -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_balance">
+
+                            <Button
+                                android:id="@+id/btn_add_money"
+                                style="@style/Widget.MaterialComponents.Button.TextButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/add_money"
+                                android:textColor="@color/purple_500" />
+
+                            <Button
+                                android:id="@+id/btn_history"
+                                style="@style/Widget.MaterialComponents.Button.TextButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/history"
+                                android:textColor="@color/purple_500" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Quick Actions Section -->
+                <LinearLayout
+                    android:id="@+id/quick_actions_section"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_balance">
+
+                    <!-- Section Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/quick_actions"
+                        android:textColor="@color/brand_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Send Money Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_send_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/purple_500"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iv_send_money"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_home"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@android:color/white" />
+
+                            <TextView
+                                android:id="@+id/tv_send_money_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="@string/send_money"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/iv_arrow"
+                                app:layout_constraintStart_toEndOf="@+id/iv_send_money"
+                                app:layout_constraintTop_toTopOf="@+id/iv_send_money" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/send_money_description"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:alpha="0.8"
+                                app:layout_constraintEnd_toStartOf="@+id/iv_arrow"
+                                app:layout_constraintStart_toEndOf="@+id/iv_send_money"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_send_money_title" />
+
+                            <ImageView
+                                android:id="@+id/iv_arrow"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_home"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@android:color/white" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- View Transactions Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_view_transactions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/purple_500"
+                        app:strokeWidth="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iv_transactions"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_transactions"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/purple_500" />
+
+                            <TextView
+                                android:id="@+id/tv_transactions_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="@string/view_saved_requests"
+                                android:textColor="@color/brand_text"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/iv_arrow_transactions"
+                                app:layout_constraintStart_toEndOf="@+id/iv_transactions"
+                                app:layout_constraintTop_toTopOf="@+id/iv_transactions" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/view_saved_requests_description"
+                                android:textColor="@color/subtitle_text"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toStartOf="@+id/iv_arrow_transactions"
+                                app:layout_constraintStart_toEndOf="@+id/iv_transactions"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_transactions_title" />
+
+                            <ImageView
+                                android:id="@+id/iv_arrow_transactions"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_home"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/purple_500" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

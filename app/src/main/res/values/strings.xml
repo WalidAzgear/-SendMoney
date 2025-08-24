@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Send Money</string>
+    
+    <!-- Authentication Strings -->
+    <string name="sign_in">Sign In</string>
+    <string name="send_money_app">SEND MONEY APP</string>
+    <string name="welcome_message">Welcome to Send Money App!</string>
+    <string name="email_hint">Email*</string>
+    <string name="password_hint">Password*</string>
+    <string name="terms_privacy_text">By proceeding you also agree to the Terms of Service\nand Privacy Policy</string>
+    <string name="back_button">Back</string>
+    
+    <!-- Error Messages -->
+    <string name="invalid_credentials">Invalid credentials. Please try again.</string>
+    <string name="email_required">Email is required</string>
+    <string name="password_required">Password is required</string>
+    
+    <!-- Utility Strings -->
+    <string name="empty_string"></string>
+    
+    <!-- Navigation Strings -->
+    <string name="nav_home">Home</string>
+    <string name="nav_transactions">Transactions</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Send Money Strings -->
+    <string name="service_label">Service</string>
+    <string name="provider_label">Provider</string>
+    <string name="send_button">SEND</string>
+    <string name="language_switch">عربي</string>
+    
+    <!-- Saved Requests Strings -->
+    <string name="request_id_format">Request ID: %s</string>
+    <string name="view_details">View Details</string>
+    <string name="saved_requests_title">Saved Send Money Requests</string>
+    <string name="request_details_title">Request Details</string>
+    <string name="close_button">Close</string>
+    
+    <!-- Home Screen Strings -->
+    <string name="good_morning">Good Morning</string>
+    <string name="default_username">Ahmed Al-Mansouri</string>
+    <string name="verified_user">Verified User</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="default_balance">500 AED</string>
+    <string name="add_money">Add Money</string>
+    <string name="history">History</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="send_money">Send Money</string>
+    <string name="send_money_description">Transfer money to friends and family</string>
+    <string name="view_saved_requests">View Saved Requests</string>
+    <string name="view_saved_requests_description">Check your saved money transfer requests</string>
+</resources>
