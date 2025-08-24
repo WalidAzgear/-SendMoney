@@ -17,6 +17,8 @@
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
             android:text="Send Money"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -31,17 +33,20 @@
             android:id="@+id/tvServiceLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Select Service" />
 
         <Spinner
             android:id="@+id/spinnerService"
             android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
             android:layout_height="wrap_content" />
 
         <LinearLayout
             android:id="@+id/providerContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -61,11 +66,13 @@
             android:id="@+id/dynamicFormContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="vertical" />
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
             android:text="Submit"
             android:enabled="false" />

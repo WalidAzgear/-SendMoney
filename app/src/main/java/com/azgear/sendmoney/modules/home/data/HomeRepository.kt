@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.flow
 
 data class BalanceResponse(
     val balance: Double,
-    val currency: String = "USD"
+    val currency: String = "AED"
 ) {
     val formattedBalance: String
         get() = String.format("$%.2f", balance)

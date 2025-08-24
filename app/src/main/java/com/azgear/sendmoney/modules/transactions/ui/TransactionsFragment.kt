@@ -1,4 +1,3 @@
-// AI-Generated Code: Updated TransactionsFragment to show saved requests
 package com.azgear.sendmoney.modules.transactions.ui
 
 import androidx.fragment.app.viewModels
